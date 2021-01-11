@@ -21,3 +21,24 @@ for item in song_list:
     pos = 0
     play_list.insert(pos, item)
     pos += 1
+
+# We use pygame for loading and playing sounds
+pygame.init()
+pygame.mixer.init()
+
+# Here we will define functions to control the music player. We also use tkinter to create the buttons
+# on the interface.
+
+def play():
+    pygame.mixer.music.load(play_list.get(tkr.ACTIVE))
+    var.set(play_list.get(tkr.ACTIVE))
+    pygame.mixer.music.play()
+
+def stop():
+    pygame.mixer.music.stop()
+
+def pause():
+    pygame.mixer.music.pause()
+
+def unpause():
+    pygame.mixer.music.unpause()
