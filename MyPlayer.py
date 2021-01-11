@@ -50,3 +50,21 @@ Button1 = tkr.Button(music_player, width=5, height=3,font="Helvetica 12 bold", t
 Button2 = tkr.Button(music_player, width=5, height=3, font=”Helvetica 12 bold”, text=”STOP”, command=stop, bg=”red”, fg=”white”)
 Button3 = tkr.Button(music_player, width=5, height=3, font=”Helvetica 12 bold”, text=”PAUSE”, command=pause, bg=”purple”, fg=”white”)
 Button4 = tkr.Button(music_player, width=5, height=3, font=”Helvetica 12 bold”, text=”UNPAUSE”, command=unpause, bg=”orange”, fg=”white”)
+
+
+# Next we define two variables which allow us to see what songs we are playing at the top of our app
+
+var = tkr.StringVar()
+song_title = tkr.Label(music_player, font="Helvetica 12 bold",
+textvariable=var)
+
+# We use the pack method in order to arrange our buttons in a horizontal way.
+
+song_title.pack()
+Button1.pack(fill="x")
+Button2.pack(fill="x")
+Button3.pack(fill="x")
+Button4.pack(fill="x")
+play_list.pack(fill="both", expand="yes")
+
+music_player.mainloop()
